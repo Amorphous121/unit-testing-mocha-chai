@@ -222,6 +222,7 @@
                 "consumes": [
                     "application/json"
                 ],
+                "security" : [],
                 "produces": [
                     "appliation/json"
                 ],
@@ -231,18 +232,26 @@
                 ],
                 "parameters": [
                     {
-                        "name": "username",
+                        "name": "body",
                         "in": "body",
-                        "description": "Unique username for account of user",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "password",
-                        "in": "body",
-                        "description": "Password of User account",
-                        "required": true,
-                        "type": "string"
+                        "description": "User credentials for login",
+                        "schema" : {
+                            "type": "object",
+                            "required": [
+                                "password",
+                                "username"
+                            ],
+                            "properties" :{
+                                "password": {
+                                    "type": "string",
+                                    "description": "Password of User account"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "description": "Unique username for account of user"
+                                }
+                            }
+                        }
                     }
                 ],
                 "responses": {

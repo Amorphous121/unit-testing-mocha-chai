@@ -1,3 +1,8 @@
+/**
+ * This module contains configuration related to app.
+ * @module config 
+ * 
+ */
 module.exports = {
     dbUri : process.env.DB_URI,
     secretKeys : {
